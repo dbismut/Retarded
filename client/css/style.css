@@ -1,0 +1,24 @@
+/* CSS declarations go here */
+ .post {
+  margin: 10px 0px;
+}
+.img-thumbnail {
+  width: 100%;
+}
+.btn-lg {
+  font-size: 28px;
+  line-height: 3.33;
+  margin-bottom: 10px;
+}
+.post img {
+  opacity: 0;
+  -webkit-transition: opacity .5s;
+  -moz-transition: opacity .5s;
+  -ms-transition: opacity .5s;
+  transition: opacity .5s;
+}
+
+.post img.loaded {
+  opacity: 1;
+  height: auto !important;
+}

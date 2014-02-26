@@ -1,0 +1,18 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "iron-router": {
+        "git": "https://github.com/EventedMind/iron-router",
+        "branch": "cmather"
+      }
+    },
+    "packages": {
+      "iron-router": {
+        "git": "https://github.com/EventedMind/iron-router",
+        "branch": "cmather",
+        "commit": "030f298074d4c3b0046ede7a3c15d7be6e2f96c1"
+      }
+    }
+  }
+}
