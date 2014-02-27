@@ -5,13 +5,19 @@
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router",
         "branch": "cmather"
-      }
+      },
+      "collection-hooks": {}
     },
     "packages": {
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router",
         "branch": "cmather",
         "commit": "030f298074d4c3b0046ede7a3c15d7be6e2f96c1"
+      },
+      "collection-hooks": {
+        "git": "https://github.com/matb33/meteor-collection-hooks.git",
+        "tag": "v0.6.2",
+        "commit": "29484b2110206be93b01c6d11ce06ec9208de7bd"
       }
     }
   }

@@ -5,6 +5,9 @@
 .img-thumbnail {
   width: 100%;
 }
+.action {
+  cursor: pointer;
+}
 .btn-lg {
   font-size: 28px;
   line-height: 3.33;
