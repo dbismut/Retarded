@@ -27,6 +27,7 @@ resizeAndOverlay = function(file, callback) {
             x = (l - w) / 2 << 0,
             y = (l - h) / 2 << 0;
 
+        ctx.setTransform( 1, 0, 0, 1, 0, 0 );
         ctx.drawImage(watermark, x, y, w, h);
         callback(canvas.toDataURL("image/jpeg"));
       };

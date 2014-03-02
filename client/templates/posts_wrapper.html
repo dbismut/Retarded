@@ -4,7 +4,8 @@
     <div class="row">
       <div id="wrapper" class="col-md-6 col-md-offset-3 col-xs-12">
         <div id="logo"><img src="/img/retarded.png"></div>
-
+        <input id="picker" type="file" class="hidden" name="image" accept="image/*" capture="camera">
+        <button id="picker-trigger" type="button" class="btn btn-danger"><i class="fa fa-camera-retro"></i>Prendre une photo</button>
         {{#each posts}}
           {{> post}}
         {{/each}}
@@ -14,7 +15,5 @@
         <div style="height: 200px"></div>
       </div>
     </div>
-    <input id="picker" type="file" class="hidden" name="image" accept="image/*" capture="camera">
-    <button id="picker-trigger" type="button" class="btn btn-danger btn-lg"><i class="fa fa-camera-retro fa-lg"></i></button>
   </div>
 </template>
