@@ -12,6 +12,7 @@ html.modal-shown, .modal-shown body {
 }
 
 #wrapper {
+  position: relative;
   transition: all .6s;
 }
 

@@ -1,5 +1,5 @@
 
-EXIF = (function() {
+var EXIF = (function() {
 
     var debug = false;
 
