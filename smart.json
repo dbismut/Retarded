@@ -2,8 +2,9 @@
   "packages": {
     "iron-router": {
       "git": "https://github.com/EventedMind/iron-router",
-      "branch": "cmather"
+      "branch": "blaze-integration"
     },
-    "collection-hooks": {}
+    "collection-hooks": {},
+    "blaze-layout": {}
   }
 }

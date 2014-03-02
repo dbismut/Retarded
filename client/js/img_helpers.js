@@ -1,30 +1,37 @@
+imgLoaded = function(img) {
+  $(img).addClass('loaded');
+  $(img).removeAttr('style');
+};
+
 resizeAndOverlay = function(file, callback) {
-  var mpImg = new MegaPixImage(file);
-  // var img = new Image();
-  // img.src = imgURL;
+  EXIF.getData(file, function() {
+    var orientation = EXIF.getTag(this, 'Orientation') || 1;
+    var mpImg = new MegaPixImage(file);
+    // var img = new Image();
+    // img.src = imgURL;
 
-  var canvas = document.createElement('canvas'),
-  //var canvas = document.getElementById('canvas'),
-      ctx = canvas.getContext('2d');
+    var canvas = document.createElement('canvas'),
+    //var canvas = document.getElementById('canvas'),
+        ctx = canvas.getContext('2d');
 
-  mpImg.render(canvas, { maxWidth: 1024, maxHeight: 1024, mode: 'square' }, function(width, height) {
+    mpImg.render(canvas, { maxWidth: 1024, maxHeight: 1024, mode: 'square', orientation: orientation }, function(width, height) {
 
-    var watermark = new Image();
-    watermark.src = '/img/retarded.png';
+      var watermark = new Image();
+      watermark.src = '/img/retarded.png';
 
-    var l = Math.min(width, height);
+      var l = Math.min(width, height);
 
-    watermark.onload = function() {
-      var w = watermark.width,
-          h = watermark.height,
-          x = (l - w) / 2,
-          y = (l - h) / 2;
+      watermark.onload = function() {
+        var w = l / 1024 * watermark.width << 0,
+            h = l / 1024 * watermark.height << 0,
+            x = (l - w) / 2 << 0,
+            y = (l - h) / 2 << 0;
 
-      ctx.drawImage(watermark, x, y, w, h);
-      callback(canvas.toDataURL("image/jpeg"));
-    };
+        ctx.drawImage(watermark, x, y, w, h);
+        callback(canvas.toDataURL("image/jpeg"));
+      };
+    });
   });
-
 };
 
 var stepDown = function(img, tw, th) {

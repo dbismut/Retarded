@@ -1,5 +1,84 @@
 /* CSS declarations go here */
- .post {
+
+@font-face {
+  font-family: 'retarded';
+  src: url('/fonts/retarded.eot');
+  src: url('/fonts/retarded.eot?#iefix') format('embedded-opentype'), url('/fonts/retarded.woff') format('woff'), url('/fonts/retarded.ttf') format('truetype');
+}
+
+html.modal-shown, .modal-shown body {
+  overflow: hidden;
+  height: 100%;
+}
+
+#wrapper {
+  transition: all .6s;
+}
+
+#logo {
+  margin: 20px 0;
+  background-color: #2D85DD;
+  text-align: center;
+}
+
+#picker-trigger {
+  position: fixed;
+  bottom: -50px;
+  left: 50%;
+  margin-left: -50px;
+  width: 100px;
+  height: 100px;
+  outline: none;
+  border: 3px solid white;
+  border-radius: 50px;
+  transition: opacity .4s;
+}
+
+#picker-trigger > .fa {
+  position: relative;
+  top: -30px;
+}
+
+.modal-shown #picker-trigger {
+  opacity: 0;
+}
+
+#logo img {
+  max-width: 100%;
+}
+
+.btn-primary {
+  background-color: #2D85DD;
+}
+
+.btn-danger {
+  background-color: #DB2C2C;
+}
+
+.btn-default {
+  background-color: white;
+}
+
+.rtd-btn {
+  height: 80px;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-family: 'retarded';
+  line-height: 30px;
+  -webkit-appearance: none;
+}
+
+.modal-shown #wrapper {
+  -webkit-filter: blur(6px);
+      -ms-filter: blur(6px);
+          filter: blur(6px);
+     -moz-filter: blur(6px);
+       -o-filter: blur(6px);
+}
+
+.post {
   margin: 10px 0px;
 }
 .img-thumbnail {
@@ -11,9 +90,8 @@
 .btn-lg {
   font-size: 28px;
   line-height: 3.33;
-  margin-bottom: 10px;
 }
-.post img {
+.post img, #modal-upload img {
   opacity: 0;
   -webkit-transition: opacity .5s;
   -moz-transition: opacity .5s;
@@ -21,7 +99,105 @@
   transition: opacity .5s;
 }
 
-.post img.loaded {
+.post img.loaded, #modal-upload img.loaded {
   opacity: 1;
-  height: auto !important;
+}
+.like {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url('/img/r.png') #2D85DD no-repeat center;
+  vertical-align: bottom;
+  -webkit-transition: background-color .2s;
+  -moz-transition: background-color .2s;
+  -ms-transition: background-color .2s;
+  transition: background-color .2s;
+}
+
+.like.liked {
+  background-color: #DB2C2C;
+  cursor: default;
+}
+
+.likecounter {
+  display: inline-block;
+  margin-left: 9px;
+  padding: 0 8px 0 6px;
+  height: 30px;
+  background-color: #2D85DD;
+  color: white;
+  vertical-align: bottom;
+  font-size: 25px;
+  font-family: 'retarded';
+  line-height: 35px;
+  cursor: default;
+}
+
+#modal-upload {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44,133,221,.8);
+  transition: all .6s ease .6s;
+  -webkit-transform: translateY(0);
+}
+
+#modal-upload.loaded {
+  -webkit-transition-delay:0s;
+}
+
+#modal-upload.animate {
+  -webkit-transform: translateY(110%);
+}
+
+
+#modal-upload .img-preview {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  padding: 4px;
+  max-width: 100%;
+  max-height: 100%;
+  border: 1px solid #2D85DD;
+  background-color: white;
+}
+
+#modal-upload .btn-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#modal-upload .btn-wrapper .rtd-btn {
+  float: left;
+  width: 50%;
+}
+
+#modal-upload .bar-wrapper {
+  position: absolute;
+  bottom: 77px;
+  z-index: 20;
+  width: 100%;
+  height: 3px;
+}
+
+.bar-wrapper .bar {
+  width: 0%;
+  height: 100%;
+  background-color: white;
+  transition: all .4s;
+}
+
+#modal-upload .img-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 80px;
+  left: 0;
+  overflow: hidden;
+  margin: 20px;
 }

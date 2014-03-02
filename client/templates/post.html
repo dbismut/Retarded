@@ -1,8 +1,8 @@
 <template name="post">
   <div class="post">
-    <img class="img-thumbnail" src="{{imgurl}}" width="{{imgwidth}}" height="{{imgheight}}" style="height:{{imgheight_style}};" onload="imgLoaded(this)"/>
+    <img class="img-thumbnail {{liked}}" src="{{imgurl}}" width="{{imgwidth}}" height="{{imgheight}}" style="height:{{imgheight_style}};" onload="imgLoaded(this)"/>
     <br>
     <p class="text-info">{{content}}</p>
-    <p class="text-success"><span class="like action">Like</span>&nbsp;<span class="badge">{{likecount}}</span></p>
+    <p><span class="like action {{liked}}">&nbsp;</span><span class="likecounter">{{likecount}} NOT BAD</span></p>
   </div>
 </template>

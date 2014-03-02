@@ -11,7 +11,10 @@ Template.post.helpers({
     return this.imgwidth ? LARGE_PREVIEW_WIDTH / this.imgwidth * this.imgheight << 0 : '';
   },
   'imgheight_style': function() {
-    return this.imgwidth ? Math.round((document.body.offsetWidth - 39) / 2 / this.imgwidth * this.imgheight) + 'px' : 'auto';
+    return this.calculatedHeight || 'auto';
+  },
+  'liked': function() {
+    return _.contains(this.likes, Session.get('userid')) ? 'liked' : 'notliked';
   },
   'likecount': function() {
     var p = Posts.findOne({_id: this._id});
@@ -19,15 +22,15 @@ Template.post.helpers({
   }
 });
 
+Template.post.created = function() {
+  //calculate height of style for better loading
+  this.data.calculatedHeight = this.data.imgwidth ? Math.round($('#wrapper').width() / this.data.imgwidth * this.data.imgheight) + 'px' : 'auto';
+};
+
 Template.post.events({
-  'click .like': function() {
-    // if (! Posts.findOne({_id: this._id, likes: Session.get('userid')}))
-    //   Posts.update({_id: this._id}, {$push: {likes: Session.get('userid')}});
-    // console.log(Posts.findOne({_id: this._id}));
-    //
-    console.log('trying to like');
-    Meteor.call('like', this._id, Session.get('userid'), function() {
-      console.log('just liked');
+  'click .like.notliked, dblclick .img-thumbnail.notliked': function() {
+    Meteor.call('like', this._id, Session.get('userid'), function(err){
+      if(err) alert(err.reason);
     });
   }
 });

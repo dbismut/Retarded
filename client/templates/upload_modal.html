@@ -1,0 +1,14 @@
+<template name="upload_modal">
+  <div id="modal-upload" class="animate">
+    <div class="img-wrapper">
+      <img class="img-preview" onload="imgLoaded(this)"/>
+    </div>
+    <div class="bar-wrapper">
+      <div id="upload-bar" class="bar"></div>
+    </div>
+    <div class="btn-wrapper">
+      <button id="cancel" type="button" class="rtd-btn btn-primary" style="border-right: 1px solid white;">Annuler</button>
+      <button id="upload" type="button" {{disabled}} class="rtd-btn btn-danger">Envoyer</button>
+    </div>
+  </div>
+</template>

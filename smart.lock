@@ -4,20 +4,26 @@
     "basePackages": {
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router",
-        "branch": "cmather"
+        "branch": "blaze-integration"
       },
-      "collection-hooks": {}
+      "collection-hooks": {},
+      "blaze-layout": {}
     },
     "packages": {
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router",
-        "branch": "cmather",
-        "commit": "030f298074d4c3b0046ede7a3c15d7be6e2f96c1"
+        "branch": "blaze-integration",
+        "commit": "6fd133401bb6de65a30ba148f7d61ea1b4dc9b43"
       },
       "collection-hooks": {
         "git": "https://github.com/matb33/meteor-collection-hooks.git",
         "tag": "v0.6.2",
         "commit": "29484b2110206be93b01c6d11ce06ec9208de7bd"
+      },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "tag": "v0.0.1",
+        "commit": "fa631b7b192618e8690d43f0033a3f4c7f77fa1d"
       }
     }
   }

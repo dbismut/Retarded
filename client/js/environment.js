@@ -1,4 +1,5 @@
 Session.set('status', 'idle');
+Session.set('modal', false);
 Session.set('limit', 5);
 
 if (! $.cookie('userid')) {
@@ -19,7 +20,7 @@ Meteor.methods({
   like: function(postid, userid) {
     if (this.isSimulation) {
       Posts.update({_id: postid}, {$push: {likes: userid}});
-      console.log('updating collection in simulation');
+      //console.log('updating collection in simulation');
       return;
     }
   }

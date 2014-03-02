@@ -28,16 +28,16 @@ Meteor.startup(function () {
   Meteor.methods({
     like: function(postid, userid) {
 
-      var bogus;
-      for (var i = 0;i<2000000000;i++) {
-        bogus = i;
-      }
+      // var bogus;
+      // for (var i=0;i<1000000000;i++) {
+      //   bogus = i;
+      // }
 
       if(! Users.findOne({userid: userid}) || Posts.findOne({_id: postid, likes: userid})) {
-        return;
+        throw new Meteor.Error(409, "Bravo, vous venez de hacker le serveur de la NSA.");
       }
 
-      Posts.update({_id: postid}, {$push: {likes: userid}});
+      return Posts.update({_id: postid}, {$push: {likes: userid}});
     },
     getUserId: function() {
       var uuid = Meteor.uuid();
