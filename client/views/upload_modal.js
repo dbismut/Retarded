@@ -15,6 +15,7 @@ Template.upload_modal.events({
   },
   'click button#upload': function(e) {
     Session.set('uploading', true);
+    $('.img-preview').attr('src', '/img/loading.gif');
     this.ajax = $.ajax({
       xhr: function(){
         var xhr = $.ajaxSettings.xhr();

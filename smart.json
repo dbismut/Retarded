@@ -1,10 +1,5 @@
 {
   "packages": {
-    "iron-router": {
-      "git": "https://github.com/EventedMind/iron-router",
-      "branch": "blaze-integration"
-    },
-    "collection-hooks": {},
-    "blaze-layout": {}
+    "collection-hooks": {}
   }
 }

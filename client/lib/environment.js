@@ -1,6 +1,8 @@
-Session.set('status', 'idle');
+POSTS_PER_PAGE = 5;
+
+Session.set('uploading', false);
 Session.set('modal', false);
-Session.set('limit', 5);
+Session.set('limit', POSTS_PER_PAGE);
 
 if (! $.cookie('userid')) {
   Meteor.call('getUserId', function(err, userid) {

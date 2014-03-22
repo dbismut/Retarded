@@ -68,8 +68,11 @@ html.modal-shown, .modal-shown body {
 .post {
   margin: 10px 0px;
 }
-.img-thumbnail {
+.post-img {
   width: 100%;
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
 }
 .action {
   cursor: pointer;
@@ -93,7 +96,8 @@ html.modal-shown, .modal-shown body {
   display: inline-block;
   width: 30px;
   height: 30px;
-  background: url('/img/r.png') #2D85DD no-repeat center;
+  background: url('/img/r@2x.png') #2D85DD no-repeat center;
+  background-size: 18px 20px;
   vertical-align: bottom;
   -webkit-transition: background-color .2s;
   -moz-transition: background-color .2s;
