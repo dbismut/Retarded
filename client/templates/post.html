@@ -1,8 +1,17 @@
 <template name="post">
   <div class="post">
+<<<<<<< HEAD
     <img class="img-thumbnail {{liked}}" src="{{imgurl}}" width="{{imgwidth}}" height="{{imgheight}}" style="height:{{imgheight_style}};" onload="imgLoaded(this)"/>
     <br>
     <p class="text-info">{{content}}</p>
     <p><span class="like action {{liked}}">&nbsp;</span><span class="likecounter">{{likecount}} NOT BAD</span></p>
+=======
+  {{#if selected}}
+    <div class="post-controls">
+      <div class="controls"><span class="like action {{liked}}">&nbsp;</span><span class="likecounter">{{likecount}} NOT BAD</span></div>
+    </div>
+  {{/if}}
+    <img class="post-img {{liked}}" src="{{imgurl}}" width="{{imgwidth}}" height="{{imgheight}}" style="height:{{imgheight_style}};" onload="imgLoaded(this)"/>
+>>>>>>> parent of 746d5f1... Revert aba46cb..f9adc86
   </div>
 </template>
