@@ -66,16 +66,33 @@ html.modal-shown, .modal-shown body {
 }
 
 .post {
-  margin: 10px 0px;
+  position:relative;
+  border-bottom: 1px solid white;
 }
+
+.post-controls {
+  position: absolute;
+  border: 10px solid #2D85DD;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.controls {
+  position: absolute;
+  bottom: -10px;
+}
+
 .post-img {
   width: 100%;
-  display: inline-block;
+  display: block;
   max-width: 100%;
   height: auto;
 }
 .action {
   cursor: pointer;
+  pointer-events: auto;
 }
 .btn-lg {
   font-size: 28px;
