@@ -66,33 +66,13 @@ html.modal-shown, .modal-shown body {
 }
 
 .post {
-  position:relative;
-  border-bottom: 1px solid white;
+  margin: 10px 0px;
 }
-
-.post-controls {
-  position: absolute;
-  border: 10px solid #2D85DD;
-  height: 100%;
+.img-thumbnail {
   width: 100%;
-  z-index: 100;
-  pointer-events: none;
-}
-
-.controls {
-  position: absolute;
-  bottom: -10px;
-}
-
-.post-img {
-  width: 100%;
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
 .action {
   cursor: pointer;
-  pointer-events: auto;
 }
 .btn-lg {
   font-size: 28px;
@@ -113,8 +93,7 @@ html.modal-shown, .modal-shown body {
   display: inline-block;
   width: 30px;
   height: 30px;
-  background: url('/img/r@2x.png') #2D85DD no-repeat center;
-  background-size: 18px 20px;
+  background: url('/img/r.png') #2D85DD no-repeat center;
   vertical-align: bottom;
   -webkit-transition: background-color .2s;
   -moz-transition: background-color .2s;

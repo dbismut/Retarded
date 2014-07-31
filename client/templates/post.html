@@ -1,10 +1,8 @@
 <template name="post">
   <div class="post">
-  {{#if selected}}
-    <div class="post-controls">
-      <div class="controls"><span class="like action {{liked}}">&nbsp;</span><span class="likecounter">{{likecount}} NOT BAD</span></div>
-    </div>
-  {{/if}}
-    <img class="post-img {{liked}}" src="{{imgurl}}" width="{{imgwidth}}" height="{{imgheight}}" style="height:{{imgheight_style}};" onload="imgLoaded(this)"/>
+    <img class="img-thumbnail {{liked}}" src="{{imgurl}}" width="{{imgwidth}}" height="{{imgheight}}" style="height:{{imgheight_style}};" onload="imgLoaded(this)"/>
+    <br>
+    <p class="text-info">{{content}}</p>
+    <p><span class="like action {{liked}}">&nbsp;</span><span class="likecounter">{{likecount}} NOT BAD</span></p>
   </div>
 </template>

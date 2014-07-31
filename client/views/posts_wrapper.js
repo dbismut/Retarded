@@ -5,6 +5,9 @@ Template.posts_wrapper.helpers({
   'posts': function () {
     return Posts.find({}, {sort: {createdAt: -1}});
   },
+  'status': function () {
+    return Session.get('status');
+  },
   'posts_loading': function() {
     return Session.get('posts_loading');
   }
@@ -33,6 +36,6 @@ var loadMorePosts = function(ev) {
   if (!Session.get('posts_loading') && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200) {
     var curLimit = Session.get('limit');
     Session.set('posts_loading', true);
-    Session.set('limit', curLimit + POSTS_PER_PAGE);
+    Session.set('limit', curLimit + 5);
   }
 };
